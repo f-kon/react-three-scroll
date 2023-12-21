@@ -1,7 +1,8 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import "./App.css";
 import { Floor } from "./components/Floor";
 import { Obj } from "./components/Obj";
+import { useEffect, useState } from "react";
 
 function App() {
   return (
@@ -17,10 +18,10 @@ function App() {
         castShadow
       />
       <group>
+        <Obj position={[-10, -10, 0]} />
         <Obj position={[-5, -5, 0]} />
         <Obj position={[0, 0, 0]} />
         <Obj position={[5, 5, 0]} />
-        <Obj position={[10, 10, 0]} />
       </group>
       <Floor position={[0, 0, -2]} receiveShadow />
     </Canvas>
